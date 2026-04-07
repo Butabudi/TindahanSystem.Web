@@ -1,0 +1,244 @@
+/* ── MarketplacePage ── page-specific styles only ── */
+/* shared buttons → src/styles/buttons.css           */
+/* shared cards   → src/styles/cards.css             */
+/* shared forms   → src/styles/forms.css             */
+
+/* ── Header & nav ── */
+.mp-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+}
+
+.mp-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.mp-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mp-nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mp-nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.mp-nav-links a:hover {
+    color: #667eea;
+}
+
+/* ── Page wrapper ── */
+.mp-page {
+    background: #0a0a0a;
+    color: #ffffff;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+/* ── Hero ── */
+.mp-hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mp-hero-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.mp-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.mp-slide.active {
+    opacity: 1;
+}
+
+.mp-slide-1 {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.mp-slide-2 {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+}
+
+.mp-slide-3 {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        linear-gradient(135deg, #48cab2 0%, #1dd1a1 100%);
+}
+
+.mp-hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding: 2rem;
+}
+
+.mp-hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff 0%, #667eea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: mp-fadeInUp 1s ease-out;
+    color: unset;
+    letter-spacing: unset;
+}
+
+.mp-hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: mp-fadeInUp 1s ease-out 0.3s both;
+    color: #ffffff;
+}
+
+.mp-hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    animation: mp-fadeInUp 1s ease-out 0.6s both;
+}
+
+/* ── Main content ── */
+.mp-main {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ── Lightbox ── */
+.mp-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+}
+
+.mp-lightbox.active {
+    display: flex;
+}
+
+.mp-lightbox-content {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+}
+
+.mp-lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.mp-lightbox-image {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.mp-lightbox-price {
+    font-size: 1.5rem;
+    color: #667eea;
+    margin: 1rem 0;
+}
+
+.mp-lightbox-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.mp-lightbox-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* ── Animation ── */
+@keyframes mp-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .mp-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .mp-hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mp-nav-links {
+        display: none;
+    }
+}

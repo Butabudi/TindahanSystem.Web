@@ -4,6 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import ProductsPage from './api/pages/products/ProductsPage'
 import CreateProductPage from './api/pages/products/CreateProductPage'
+import MarketplacePage from './api/pages/marketplace/MarketplacePage'
 import './App.css'
 
 function HomePage() {
@@ -55,13 +56,30 @@ function HomePage() {
 function App() {
   return (
     <>
+
+    {/* <nav>        <Link to="/">Home</Link> | <Link to="/products">Products</Link> | <Link to="/products/create">Create Product</Link> | <Link to="/marketplace">Marketplace</Link>
+      </nav> */}
       <nav>
-        <Link to="/">Home</Link> | <Link to="/products">Products</Link> | <Link to="/products/create">Create Product</Link>
+             <header className="mp-header">
+                <nav className="mp-nav">
+                    <div className="mp-logo">ProMarket</div>
+                    <ul className="mp-nav-links">
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/marketplace">Marketplace</Link></li>
+                        <li><a href="#buy">Buy</a></li>
+                        <li><a href="#sell">Sell</a></li>
+                        <li><a href="#rent">Rent</a></li>
+                        <li><a href="#trade">Trade</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/create" element={<CreateProductPage />} />
+        <Route path="/marketplace" element={<MarketplacePage />} />
       </Routes>
     </>
   )

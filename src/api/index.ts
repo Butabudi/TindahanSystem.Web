@@ -8,7 +8,7 @@ export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
 export { Category } from './models/Category';
-export { Condition } from './models/Condition';
+export type { Condition } from './models/Condition';
 export type { CreateProductRequest } from './models/CreateProductRequest';
 export type { CreateProductResponse } from './models/CreateProductResponse';
 export type { CreateVehicleRequest } from './models/CreateVehicleRequest';
@@ -16,7 +16,7 @@ export type { CreateVehicleResponse } from './models/CreateVehicleResponse';
 export type { PatchProductRequest } from './models/PatchProductRequest';
 export type { ProblemDetails } from './models/ProblemDetails';
 export type { ProductResponse } from './models/ProductResponse';
-export { SubCategory } from './models/SubCategory';
+export type { SubCategory } from './models/SubCategory';
 export type { UpdateVehicleRequest } from './models/UpdateVehicleRequest';
 export type { ValidationProblemDetails } from './models/ValidationProblemDetails';
 

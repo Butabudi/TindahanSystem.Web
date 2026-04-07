@@ -1,4 +1,5 @@
-import { useState, FormEvent } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import apiClient from "../../core/apiClient";
 
 export default function CreateProductPage() {
@@ -11,7 +12,7 @@ export default function CreateProductPage() {
     const [condition, setCondition] = useState("New");
     const [message, setMessage] = useState<string | null>(null);
 
-    const handleSubmit = async (e: FormEvent) => {
+    const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             // Maps to [HttpPost("api/create")] CreateProduct()
@@ -26,8 +27,11 @@ export default function CreateProductPage() {
                 addressId,
             });
             setMessage("Product created successfully!");
-        } catch (err: any) {
-            setMessage(`Error: ${err.response?.data?.title ?? err.message}`);
+        } catch (err: unknown) {
+            const message = axios.isAxiosError(err)
+                ? (err.response?.data?.title ?? err.message)
+                : "An unexpected error occurred";
+            setMessage(`Error: ${message}`);
         }
     };
 

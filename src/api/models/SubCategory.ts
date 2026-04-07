@@ -2,9 +2,4 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export enum SubCategory {
-    CARS = 'Cars',
-    MOTOR_BIKES = 'MotorBikes',
-    BOATS = 'Boats',
-    PARTS = 'Parts',
-}
+export type SubCategory = 'Cars' | 'MotorBikes' | 'Boats' | 'Parts';

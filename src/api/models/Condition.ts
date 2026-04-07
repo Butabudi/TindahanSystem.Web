@@ -2,7 +2,4 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export enum Condition {
-    NEW = 'New',
-    USED = 'Used',
-}
+export type Condition = 'New' | 'Used';
