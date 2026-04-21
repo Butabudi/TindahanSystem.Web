@@ -69,13 +69,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    padding-top: 72px; /* offset for fixed mp-header */
+    box-sizing: border-box;
 }
 
 .mp-hero-slider {
     position: absolute;
     inset: 0;
     z-index: 0;
+    overflow: hidden;
 }
 
 .mp-slide {
@@ -115,14 +117,15 @@
 
 .mp-hero-content h1 {
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
+    padding-bottom: 0.45em;
+    padding-top: 0.15em;
     background: linear-gradient(135deg, #ffffff 0%, #667eea 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: mp-fadeInUp 1s ease-out;
-    color: unset;
-    letter-spacing: unset;
+    letter-spacing: normal;
 }
 
 .mp-hero-content p {
@@ -143,6 +146,7 @@
 /* ── Main content ── */
 .mp-main {
     padding: 4rem 2rem;
+    padding-top: calc(4rem + 72px);
     max-width: 1400px;
     margin: 0 auto;
 }
